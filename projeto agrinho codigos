@@ -1,0 +1,33 @@
+  </section>
+  <section class="content-section" id="eventos" tabindex="0">
+    <h2>Atividades e Eventos ao Ar Livre</h2>
+    <p>Festajando organiza encontros que mesclam lazer, cultura e educação ambiental. Realizamos caminhadas educativas pela floresta, workshops de agroecologia, feiras de produtos orgânicos e apresentações artísticas que valorizam as influências rurais e urbanas.</p>
+    <p>Esses eventos oferecem um espaço para troca de experiências, aprendizado sobre sustentabilidade e fortalecimento da comunidade em um cenário natural, proporcionando descanso e inspiração para todos.</p>
+  </section>
+  <section class="content-section" id="valores" tabindex="0">
+    <h2>Valores de Festajando</h2>
+    <p>Nós acreditamos que a verdadeira conexão entre campo e cidade é baseada em:</p>
+    <ul>
+      <li>Respeito à natureza e às suas forças vitais;</li>
+      <li>Valorização das culturas locais e tradições;</li>
+      <li>Promoção da sustentabilidade ambiental e social;</li>
+      <li>Fortalecimento da comunidade através da interação e compartilhamento;</li>
+      <li>Incentivo à educação ambiental e consciência coletiva.</li>
+    </ul>
+    <p>Festajando inspira uma nova relação entre homem e meio ambiente, onde o progresso urbano respeita e aprende com o saber do campo.</p>
+  </section>
+  <aside tabindex="0" aria-label="Destaques da conexão com a natureza e cidade">
+    <h2>Por Que Participar do Festajando?</h2>
+    <ul>
+      <li>Promoção da integração harmoniosa entre o ambiente natural e o urbano.</li>
+      <li>Eventos ao ar livre na floresta para relaxar e se reconectar.</li>
+      <li>Atividades culturais que unem tradições do campo e da cidade.</li>
+      <li>Consciência ambiental com ações concretas para conservar espaços verdes urbanos.</li>
+    </ul>
+  </aside>
+</main>
+<footer>
+  &copy; 2024 Festajando - Celebrando a Floresta, o Campo e a Cidade. Todos os direitos reservados.
+</footer>
+</body>
+</html>
