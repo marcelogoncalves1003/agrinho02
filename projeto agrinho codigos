@@ -1,9 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Festajando - Conexão com Campo e Cidade</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+  /* Base reset and typography */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, #24411a 0%, #6a8747 70%, #8ebb6e 100%);
+    color: #f0f5ec;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: rgba(37, 54, 23, 0.85);
+    backdrop-filter: saturate(180%) blur(5px);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: #dbeadd;
+    text-shadow: 0 0 10px rgba(106, 135, 71, 0.7);
+  }
+
+  nav {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  nav a {
+    color: #c4d3a2;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    transition: background-color 0.25s ease;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    background-color: rgba(255 255 255 / 0.15);
+    outline: none;
+  }
+
+  main {
+    flex-grow: 1;
+    padding: 2rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media(min-width: 768px) {
+    main {
+      grid-template-columns: 3fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  section.intro {
+    background: rgba(255 255 255 / 0.1);
+    padding: 2.4rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px rgb(30 50 0 / 0.4);
+  }
+
+  section.intro h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #e4f0d6;
+    text-shadow:
+      0 0 6px rgba(138, 184, 87, 0.9),
+      0 0 30px rgba(138, 184, 87, 0.5);
+  }
+
+  section.intro p {
+    font-size: 1.15rem;
+    max-width: 680px;
+    color: #d2deb5;
+    margin-bottom: 1.8rem;
+  }
+
+  section.intro img {
+    width: 100%;
+    max-width: 680px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgb(20 40 0 / 0.4);
+    margin-top: 1.5rem;
+  }
+
+  section.content-section {
+    background: rgba(255 255 255 / 0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 6px 15px rgb(25 45 10 / 0.3);
+  }
+
+  section.content-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #b1d88a;
+    text-shadow: 0 0 5px rgba(115, 165, 60, 0.8);
+  }
+
+  section.content-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #d2deb5;
+  }
+
+  aside {
+    background: rgba(255 255 255 / 0.1);
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgb(25 45 10 / 0.35);
+    color: #d0dfb8;
+  }
+
+  aside h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #c2d18c;
+    text-shadow: 0 0 5px rgba(131, 174, 68, 0.8);
+  }
+
+  aside ul {
+    list-style-type: disc;
+    padding-left: 1.4rem;
+  }
+
+  aside ul li {
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  footer {
+    padding: 1.5rem 2rem;
+    background: rgba(37, 54, 23, 0.9);
+    text-align: center;
+    font-size: 0.95rem;
+    color: #a9c794;
+    font-weight: 500;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.15);
+  }
+
+  /* Scrollbar for main content */
+  main::-webkit-scrollbar {
+    width: 8px;
+  }
+  main::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  main::-webkit-scrollbar-thumb {
+    background-color: #5b7f3b;
+    border-radius: 20px;
+  }
+
+</style>
+</head>
+<body>
+<header>
+  <div class="logo" tabindex="0">Festajando</div>
+  <nav aria-label="Menu principal">
+    <a href="#introducao">Início</a>
+    <a href="#sobre-conexao">Sobre a Conexão</a>
+    <a href="#eventos">Eventos</a>
+    <a href="#valores">Valores</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+<main>
+  <section class="intro" id="introducao" tabindex="0">
+    <h1>Festajando: Conexão com Campo e Cidade</h1>
+    <p>Vivencie a harmonia perfeita entre a vida urbana e a natureza. Festajando celebra a magia do contato com a floresta, reforçando laços entre campo e cidade.</p>
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/52309641-9cb3-43d1-a6a8-9b22b85206b4.png" alt="Floresta vibrante com luz do sol atravessando as copas das árvores, folhas verdes brilhando, transmitindo uma sensação de vida e conexão com a natureza." />
   </section>
+
+  <section class="content-section" id="sobre-conexao" tabindex="0">
+    <h2>Entendendo a Conexão entre Campo e Cidade</h2>
+    <p>A conexão entre o campo e a cidade é fundamental para valorizar as raízes culturais, ambientais e sociais que unem as pessoas. Festajando promove o diálogo entre a vida urbana dinâmica e a calmaria da natureza, incentivando uma convivência harmoniosa e respeitosa.</p>
+    <p>Este vínculo permite que os moradores urbanos resgatem contato direto com a terra, os ciclos naturais e as tradições do campo, enquanto as comunidades rurais se abrem para as oportunidades culturais e tecnológicas da cidade.</p>
+  </section>
+
   <section class="content-section" id="eventos" tabindex="0">
     <h2>Atividades e Eventos ao Ar Livre</h2>
     <p>Festajando organiza encontros que mesclam lazer, cultura e educação ambiental. Realizamos caminhadas educativas pela floresta, workshops de agroecologia, feiras de produtos orgânicos e apresentações artísticas que valorizam as influências rurais e urbanas.</p>
     <p>Esses eventos oferecem um espaço para troca de experiências, aprendizado sobre sustentabilidade e fortalecimento da comunidade em um cenário natural, proporcionando descanso e inspiração para todos.</p>
   </section>
+
   <section class="content-section" id="valores" tabindex="0">
     <h2>Valores de Festajando</h2>
     <p>Nós acreditamos que a verdadeira conexão entre campo e cidade é baseada em:</p>
@@ -16,6 +233,7 @@
     </ul>
     <p>Festajando inspira uma nova relação entre homem e meio ambiente, onde o progresso urbano respeita e aprende com o saber do campo.</p>
   </section>
+
   <aside tabindex="0" aria-label="Destaques da conexão com a natureza e cidade">
     <h2>Por Que Participar do Festajando?</h2>
     <ul>
@@ -31,3 +249,5 @@
 </footer>
 </body>
 </html>
+
+
